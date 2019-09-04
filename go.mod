@@ -1,5 +1,4 @@
-module github.com/boomchawarat/jwt-claims-extractor/middleware
-
+module github.com/boomchawarat/jwt-claims-extractor
 go 1.12
 
 require (
