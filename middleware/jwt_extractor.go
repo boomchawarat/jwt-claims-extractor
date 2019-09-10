@@ -34,7 +34,7 @@ func JWTExtractor(config JWTExtractorConfig) echo.MiddlewareFunc {
           if name, found := claims[key]; found {
             c.Request().Header.Add("X-Consumer-Token-" + strings.Title(key), name.(string))
           }
-	    }
+      }
       }
       // Proceed
       return next(c)
