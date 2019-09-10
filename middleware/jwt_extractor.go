@@ -33,7 +33,6 @@ func JWTExtractor(config JWTExtractorConfig) echo.MiddlewareFunc {
 			if claims, ok := token.Claims.(jwt.MapClaims); ok {
 				for _, key := range config.DataFields {
 					if name, found := claims[key]; found {
-
 						if key != "role" {
 							c.Request().Header.Add("X-Consumer-Token-"+strings.Title(key), name.(string))
 						} else {
@@ -53,7 +52,6 @@ func JWTExtractor(config JWTExtractorConfig) echo.MiddlewareFunc {
 							roleString += "]"
 							c.Request().Header.Add("X-Consumer-Token-"+strings.Title(key), roleString)
 						}
-
 					}
 				}
 			}
